@@ -1,0 +1,26 @@
+{
+  "name": "alpha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "log2out": "0.0.21",
+    "multer": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/las560/Basic-Stock-Chart-App.git"
+  },
+  "author": "Louis Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/las560/Basic-Stock-Chart-App/issues"
+  },
+  "homepage": "https://github.com/las560/Basic-Stock-Chart-App#readme"
+}
