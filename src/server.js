@@ -1,11 +1,11 @@
 var express = require('express');
-var multer = require('multer');
 var log2out = require('log2out');
 
 var app = express();
-var uploading = multer({
-    dest: './data/'
-});
+app.use('/', express.static('static', {
+    etag: false
+}));
+
 
 var logger = log2out.getLogger('Server');
 
@@ -13,9 +13,8 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 
-app.post('/1/upload', uploading, function(req, res){
-    console.log(req.body); // form fields
-    console.log(req.files); // form files
+app.put('/1/upload', function(req, res){
+    logger.debug("should upload a file...")
 });
 
 app.listen(3000, function () {
