@@ -13,8 +13,7 @@ var logger = log4js.getLogger('Server');
 // });
 
 app.put('/1/upload', function(req, res){
-    console.log(req.body); // form fields
-    console.log(req.files); // form files
+    logger.debug("should upload a file...");
 });
 
 app.listen(3000, function () {
