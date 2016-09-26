@@ -1,19 +1,18 @@
-var express = require('express');
-var multer = require('multer');
-var log2out = require('log2out');
+var express = require("express");
+var log4js = require("log4js");
+var config = require("./config.js");
 
 var app = express();
-var uploading = multer({
-    dest: './data/'
-});
+app.use(express.static(config.static.html));
+app.use(express.static(config.static.js));
 
-var logger = log2out.getLogger('Server');
+var logger = log4js.getLogger('Server');
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+// app.get('/', function(req, res) {
+//     res.sendFile(config.static + '/html/index.html');
+// });
 
-app.post('/1/upload', uploading, function(req, res){
+app.put('/1/upload', function(req, res){
     console.log(req.body); // form fields
     console.log(req.files); // form files
 });
